@@ -1,6 +1,6 @@
 # Project 1.5
 
-This project involves 3 simple questions on manipulating pandas dataframes. Below I have added each question and my solutions to each of them. First, we must import pandas and create a path to our dataset so that it can be imported. 
+This project involves 3 simple questions on manipulating pandas dataframes. Below I have added each question and my solutions to each of them. First, we must import pandas and create a path to our dataset so that it can be imported. We will also use .head() to ensure that our data imported correctly.
 
 ```
 import pandas as pd
