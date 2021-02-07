@@ -1,20 +1,26 @@
 # Project 1.5
 
-import pandas as pd
-path_to_data = 'C:/Users/Andrew/Desktop/COLLEGE STUFF/Spring 2021/Intro Data Science/Week 2/gapminder.tsv' #Setting the path to my dataset
-data = pd.read_csv(path_to_data, sep = '\t') #Import the dataset and assign it to an object
-data.head() #Check if the data imported correctly
+This project involves 3 simple questions on manipulating pandas dataframes. Below I have added each question and my solutions to each of them. First, we must import pandas and create a path to our dataset so that it can be imported. 
 
-#Exercise 1
-#Get a list of all the years in this data, without any duplicates. How many unique values are there, and what are they?
+`import pandas as pd
+path_to_data = 'C:/Users/Andrew/Desktop/COLLEGE STUFF/Spring 2021/Intro Data Science/Week 2/gapminder.tsv'
+data = pd.read_csv(path_to_data, sep = '\t') 
+data.head()` 
 
-uniqueyears = data.year.unique() #This will find all of the unique instances in the 'years' column of our dataset
-print(uniqueyears) #Check the output to make sure it looks correct, as well as shows the unique year values that there are
+## Exercise 1
+### Get a list of all the years in this data, without any duplicates. How many unique values are there, and what are they?
 
-print(len(uniqueyears)) #Finds out the length of the list made by our previous work, which will show how many unique years are in the dataset
+First, we need to get a list of all of the unique instances in the 'years' column of our dataset. This can be done simply with the .unique() function. We then print the function to make sure that there are no duplicates in our new list, and to show what the unique values are.
 
-#Exercise 2
-#What is the largest value for population (pop) in this data? When and where did this occur?
+`uniqueyears = data.year.unique()
+print(uniqueyears)`
+
+The unique values are [1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 2002 2007]. To answer the next part of the question, we should find out how long our list is. We can do this by using len().
+
+`print(len(uniqueyears))`
+
+## Exercise 2
+### What is the largest value for population (pop) in this data? When and where did this occur?
 
 maxpop = data['pop'].max() #Finds the highest value in the 'pop' column and assigns it to an object
 print(maxpop) #Prints our new object to make sure the output looks correct
