@@ -4,4 +4,4 @@
 ### Project 1
 In this project, we manipulated a simple dataset on population data to get a refresher on subsetting in python.
 
-![](Project 1.md)
+![Project 1](Project 1.md)
