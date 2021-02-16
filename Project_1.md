@@ -103,6 +103,14 @@ Our output shows us that the country with the lowest life expectancy was Rwanda 
 ## Question 5
 ##### Using the data frame you created by importing the gapminder.tsv data set, multiply the variable pop by the variable gdpPercap and assign the results to a newly created variable. Then subset and order from highest to lowest the results for Germany, France, Italy and Spain in 2007. Create a table that illustrates your results (you are welcome to either create a table in markdown or plot/save in PyCharm and upload the image). Stretch goal: which of the four European countries exhibited the most significant increase in total gross domestic product during the previous 5-year period (to 2007)?
 
+Below is the table I created after going through the steps outlined in the question. I have not added the code here as I believe the output shows my work, but would be happy to do so if needed!
+
+ Country       | Continent          | Year  |Life Expectancy     | Population   | GDP per Capita  |GDP  |
+|:-------------:|:-------------:|:-----:|:-------------:|:-------------:|:-----:|:-----:|
+| Germany| Europe | 2007| 79.406 | 82400996 | 32170.37442 | 2.650871e+12 |
+| France | Europe | 2007 | 80.657 | 61083916  | 30470.01670 | 1.861228e+12 |
+| Italy | Europe | 2007 | 80.546 | 58147733 | 28569.71970 | 1.661264e+12 |
+| Spain | Europe | 2007 | 80.941 | 40448191 | 28821.06370 | 1.165760e+12 |
 
 ## Question 6
 ##### You have been introduced to four logical operators thus far: &, ==, | and ^. Describe each one including its purpose and function. Provide an example of how each might be used in the context of programming.
