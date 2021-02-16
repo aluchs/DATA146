@@ -222,3 +222,4 @@ The apply() function in pandas allows you to apply a function to every value of 
 ## Question 10
 ##### Also describe an alternative approach to filtering the number of columns in a data frame. Instead of using .iloc, what other approach might be used to select, filter and assign a subset number of variables to a new data frame?
 
+An alternative but perhaps slower way of filtering then number of columns in a dataframe is to pull out each column individually and assemble them into a new data frame. 
