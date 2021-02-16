@@ -107,11 +107,17 @@ Our output shows us that the country with the lowest life expectancy was Rwanda 
 ## Question 6
 ##### You have been introduced to four logical operators thus far: &, ==, | and ^. Describe each one including its purpose and function. Provide an example of how each might be used in the context of programming.
 
-In python, &, ==, | and ^ are called bitwise operators. This means that they function with numbers and treat them as binary code. Let's go through them one by one.
+In python, &, ==, | and ^ are called bitwise operators. We will use them as logical operators in boolean logic, though they also serve another function with numbers by treatreating them as binary code (I looked a bit into this but am not familiar with binary code). Let's go through them one by one.
 
-& is the bitwise form of AND. The argument takes two bits and compares them, returning a 1 only when there is a 1 in the same location in both bits. Otherwise, the space is turned into a 0. 
+& is the bitwise form of AND. It will look at two conditions and output TRUE if both conditions it is considering are true. 
 
-| is the bitwise form of OR. The argument takes two bits and compares them, returning a 1 wherever there is a 1 in either bit. 
+| is the bitwise form of OR. OR will look at two conditions and output TRUE if either condition it is considering is true.
+
+== means 'equal to' in python, and will return True if the operands on either side of it are equal. 
+
+^ is a bitwise operator, but for our purposes can be combined with an '=' to create a new assignment operator. The ^ will make it so that the variable on the right of the '=' will be an exponent for the value on the left of the '='
+
+
 
 ## Question 7
 ##### Describe the difference between .loc and .iloc. Provide an example of how to extract a series of consecutive observations from a data frame. Stretch goal: provide an example of how to extract all observations from a series of consecutive columns. 
