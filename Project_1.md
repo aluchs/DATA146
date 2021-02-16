@@ -83,6 +83,26 @@ From the output, we can see that the column has regular intervals of 5 years. If
 ## Question 4
 ##### Using the data frame you created by importing the gapminder.tsv data set, determine which country at what point in time had the lowest life expectancy. Conduct a cursory level investigation as to why this was the case and provide a brief explanation in support of your explanation.
 
+To find what country had the lowest life expectancy, we can use the .min() function. By subsetting to only include the life expectancy column and using .min(), the computer will return the row with the lowest value for life expectancy. In the code below, we first find the column name that includes life expectancy, then use .min to find the value we are looking for. After we have found that value, we will subset the data frame for rows that include the value we found. The code chunk below includes the output for the last line of code.
+
+```
+data.columns
+lifemin = data['lifeExp'].min()
+#print(lifemin)
+lowestlifeExp = (data['lifeExp'] == 23.599)
+#print(lowestlifeExp)
+temp = data[lowestlifeExp]
+print(temp)
+
+>>>print(temp)
+     country continent  year  lifeExp      pop   gdpPercap
+1292  Rwanda    Africa  1992   23.599  7290203  737.068595
+```
+Our output shows us that the country with the lowest life expectancy was Rwanda in 1992. This was likely due to the Rwandan Civil War (1990-1994) and ensuing Rwandan Genocide. Because our data was recorded in intervals of 5 years, the 1992 entry for Rwanda includes the years 1992-1996. The Rwandan Genocide occured in 1994 after the majority Hutu government ordered the killing of the minority Tutsi. The conflict led to the murder of up to 800,000 Rwandans, which for the purposes of our analysis clearly explains why the life expectancy in Rwanda was so low at that time.
+
+## Question 5
+##### Using the data frame you created by importing the gapminder.tsv data set, multiply the variable pop by the variable gdpPercap and assign the results to a newly created variable. Then subset and order from highest to lowest the results for Germany, France, Italy and Spain in 2007. Create a table that illustrates your results (you are welcome to either create a table in markdown or plot/save in PyCharm and upload the image). Stretch goal: which of the four European countries exhibited the most significant increase in total gross domestic product during the previous 5-year period (to 2007)?
+
 
 
 
