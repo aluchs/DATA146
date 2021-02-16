@@ -165,8 +165,54 @@ print(x)
 ## Question 7
 ##### Describe the difference between .loc and .iloc. Provide an example of how to extract a series of consecutive observations from a data frame. Stretch goal: provide an example of how to extract all observations from a series of consecutive columns. 
 
+.loc and .iloc allow you to filter out parts of a dataframe based on the name of their row or column, or based on their index. .loc will filter out rows or columns based on their label names. On the other hand, .iloc will filter out rows or columns based on their integer locations. We can use either to extract a series of consecutive observations from a data frame. For example, lets say we wanted to extract only the 2nd - 6th rows in our data frame. Because we are using the index as the means of subsetting, we will use .iloc. This is shown in the below code snippet and output following it. 
+
+```
+subset = data.iloc[2:6]
+print(subset)
+
+>>>iloc
+       country continent  year  lifeExp       pop   gdpPercap
+2  Afghanistan      Asia  1962   31.997  10267083  853.100710
+3  Afghanistan      Asia  1967   34.020  11537966  836.197138
+4  Afghanistan      Asia  1972   36.088  13079460  739.981106
+5  Afghanistan      Asia  1977   38.438  14880372  786.113360
+```
+
 ## Question 8
 ##### Describe how an api works. Provide an example of how to construct a request to a remote server in order to pull data, write it to a local file and then import it to your current work session.
+
+API stands for application programming interface. APIs serve as a way for applications to talk to one another, in our case python to some other application like twitter or another data-supplying website. Python can use APIs to pull data automatically from those other applications. Below is an example of how to use an API using some of the code that we used in class, adapted for my own use. My own comments are added to narrate what each part of the code does.
+
+```
+#First, we need to import the libraries we will be using. Requests allows us to use our API, while os allows us to read and write to folders on our local files.
+import requests
+import os
+
+#This is the url we will be using with requests to get to where the data is stored.
+url = "https://api.covidtracking.com/v1/states/daily.csv"
+
+#Next, we need to make a place for our data to go. The below lines make the path to where our data will be stored as well as the name of our new CSV.
+data_folder = 'C:/Users/Andrew/Desktop/COLLEGE STUFF/Spring 2021/Intro Data Science/' #This line must be edited pending your own file locations
+if not os.path.exists(data_folder):
+    os.makedirs(data_folder)
+# Now we need to make a file name. We are only going to do this once, so the file name can be shortened for our one-time use.
+file_name_onetime = 'COVIDdata.csv'
+file_name = os.path.join(data_folder, file_name_onetime)
+
+file_name
+
+# Next, we download our data using the requests library. The below command will get the data from the API.
+r = requests.get(url)
+
+# Now, we write the data to our local file.
+# Using the 'with' statement will immediately close the file once we are done writing
+with open(file_name, 'wb') as f:
+    f.write(r.content)
+    
+#Now the data is saved, but we still need to open it in our current work session! This can be done simply with read_csv.
+dataset = pd.read_csv(data_folder + '/COVIDdata.csv')
+```
 
 ## Question 9
 ##### Describe the apply() function from the pandas library. What is its purpose? Using apply() to various class objects is an alternative (potentially preferable approach) to writing what other type of command? Why do you think apply() could be a preferred approach?
