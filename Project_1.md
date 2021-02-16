@@ -120,9 +120,10 @@ In python, &, ==, | and ^ are called bitwise operators. This means that they fun
 ##### Describe how an api works. Provide an example of how to construct a request to a remote server in order to pull data, write it to a local file and then import it to your current work session.
 
 ## Question 9
-##### Describe the apply() function from the pandas library. What is its purpose? Using apply) to various class objects is an alternative (potentially preferable approach) to writing what other type of command? Why do you think apply() could be a preferred approach?
+##### Describe the apply() function from the pandas library. What is its purpose? Using apply() to various class objects is an alternative (potentially preferable approach) to writing what other type of command? Why do you think apply() could be a preferred approach?
+
+The apply() function in pandas allows you to apply a function to every value of a series. This allows us to quickly create indices or assign new values to to a series with a higher level of control, as you are the one making the function. Using apply() can be a strong alternative to looping over a data frame with indices. Using apply() will likely be faster than a loop, which for large sets of data can make a huge difference in the time it takes for your code to run. 
 
 ## Question 10
 ##### Also describe an alternative approach to filtering the number of columns in a data frame. Instead of using .iloc, what other approach might be used to select, filter and assign a subset number of variables to a new data frame?
-
 
