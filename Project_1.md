@@ -19,7 +19,7 @@ In our workspace, we can now reference the pandas package by simply using pd. Th
 ## Question 2
 ##### Describe what is a data frame? Identify a library of functions that is particularly useful for working with data frames. In order to read a file in its remote location within the file system of your operating system, which command would you use? Provide an example of how to read a file and import it into your work session in order to create a new data frame. Also, describe why specifying an argument within a read_() function can be significant. Does data that is saved as a file in a different type of format require a particular argument in order for a data frame to be successfully imported? Also, provide an example that describes a data frame you created. How do you determine how many rows and columns are in a data frame? Is there an alternate terminology for describing rows and columns?
 
-A data frame is a two dimensional data structure in python - it can be pictured almost as a Microsoft Excel spreadsheet. Pandas is an incredibly useful package for work with data frames. In order to put data into a data frame, however, we must first import data by reading in a file from our computer. This can be done with pandas via the following code. The first line imports pandas to use in our work session. The second sets the file path for pandas to use, and the third is a function to read in CSVs, or comma separated values files, as a data frame into our work session.
+A data frame is a two dimensional data structure in python - it can be pictured almost as a Microsoft Excel spreadsheet. Pandas is an incredibly useful package for work with data frames. In order to put data into a data frame, however, we must first import data by reading in a file from our computer. This can be done with pandas via the pandas.read_csv() function. In the code below, the first line imports pandas to use in our work session. The second sets the file path for pandas to use, and the third is a function to read in CSVs, or comma separated values files, as a data frame into our work session.
 
 ```
 import pandas as pd 
@@ -47,5 +47,43 @@ Rows and columns can also be called called vectors. In my example, I imported th
 >>>data.shape
 (1704, 6)
 ```
+
+## Question 3
+##### Import the gapminder.tsv data set and create a new data frame. Interrogate and describe the year variable within the data frame you created. Does this variable exhibit regular intervals? If you were to add new outcomes to the raw data in order to update and make it more current, which years would you add to each subset of observations? Stretch goal: can you identify how many new outcomes in total you would be adding to your data frame?
+
+In the above examples we already imported the gapminder.tsv dataset, though I will repeat the code here for posterity's sake. 
+
+```
+import pandas as pd 
+path_to_data = 'C:/Users/Andrew/Desktop/COLLEGE STUFF/Spring 2021/Intro Data Science/Week 2/gapminder.tsv'
+data = pd.read_csv(path_to_data, sep = '\t')
+```
+
+Let's take a look at the 'year' variable in our data frame. We can do this by subsetting the data frame and assigning the subset to an object, in case we want to do it later. Printing this object will also allow us to look at the column on its own. These things can be accomplished with the following (the output is included):
+
+```
+year_only = data['year']
+year_only
+
+>>>year_only
+0       1952
+1       1957
+2       1962
+3       1967
+4       1972
+        ... 
+1699    1987
+1700    1992
+1701    1997
+1702    2002
+```
+From the output, we can see that the column has regular intervals of 5 years. If we were to add more current data to our data frame, we would add 2007, 2012, 2017, and eventually 2022. 
+
+
+## Question 4
+##### Using the data frame you created by importing the gapminder.tsv data set, determine which country at what point in time had the lowest life expectancy. Conduct a cursory level investigation as to why this was the case and provide a brief explanation in support of your explanation.
+
+
+
 
 
