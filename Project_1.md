@@ -107,17 +107,52 @@ Our output shows us that the country with the lowest life expectancy was Rwanda 
 ## Question 6
 ##### You have been introduced to four logical operators thus far: &, ==, | and ^. Describe each one including its purpose and function. Provide an example of how each might be used in the context of programming.
 
-In python, &, ==, | and ^ are called bitwise operators. We will use them as logical operators in boolean logic, though they also serve another function with numbers by treatreating them as binary code (I looked a bit into this but am not familiar with binary code). Let's go through them one by one.
+In python, &, ==, | and ^ are called bitwise operators. We will use them as logical operators in boolean logic, though they also serve another function with numbers by treating them as binary code (I looked a bit into this but am not familiar with binary code). Let's go through them one by one.
 
-& is the bitwise form of AND. It will look at two conditions and output TRUE if both conditions it is considering are true. 
+& is the bitwise form of AND. It will look at two conditions and output TRUE if both conditions it is considering are true. This can be used in conjunction with things like 'if' statements to make code run only if certain conditions are met. In the example below, the code would print "Not all are 4" because the '&' will only run the 'if' line if BOTH a and b are equal to 4. They are not both equal to 4, so the computer runs the 'else' statement's code.
 
-| is the bitwise form of OR. OR will look at two conditions and output TRUE if either condition it is considering is true.
+```
+a = 5
+b = 4
 
-== means 'equal to' in python, and will return True if the operands on either side of it are equal. 
+if a & b == 4:
+    print("Both are 4")
+else:
+    print("Not all are 4")
+```
 
-^ is a bitwise operator, but for our purposes can be combined with an '=' to create a new assignment operator. The ^ will make it so that the variable on the right of the '=' will be an exponent for the value on the left of the '='
+| is the bitwise form of OR. OR will look at two conditions and output TRUE if either condition it is considering is true. We can adapt the code snippet we just ran to see how it functions in code. The below code is the same as the snippet above, except in the 'if' statement the '&' has been replaced with a '|' and the printed statements have been adapted to fit our new operator. Now the computer is looking for EITHER a or b to be equal to 4. Because 'b' is equal to 4, running the code will return "One is 4" because one of our objects is equal to 4.
 
+```
+a = 5
+b = 4
 
+if a | b == 4:
+    print("One is 4")
+else:
+    print("Neither are 4")
+```
+
+== means 'equal to' in python, and will return True if the operands on both sides of it are equal. We can continue to use the same code snippet to demonstrate how it functions. In the 3rd line of the below code, we use == to tell the computer that both a and b must be equal (hence the ==) to 4 in order for the statement to be true. We cannot use '=' because that is used to assign things to objects.
+
+```
+a = 5
+b = 4
+
+if a & b == 4: #This line showcases the use of '=='
+    print("Both are 4")
+else:
+    print("Not all are 4")
+```
+
+^ is a bitwise operator called "exclusive or". It compares two bits, and for each bit that is the same, outputs a 0. If the bits are different, it will output a 1. We can use the integers 6 and 3 to demonstrate how this functions. In binary, 6 is equivalent to 110 while 3 is equivalent to 011. In the first bit, the bits are different, so we get a 1. In the second bit, they are the same, and in the third they are different, giving us 01. Put all of those together and you get 101, or binary for 5. Let's take a look at the code and it's output.
+
+```
+x = 6 ^ 3
+print(x)
+
+>>>5
+```
 
 ## Question 7
 ##### Describe the difference between .loc and .iloc. Provide an example of how to extract a series of consecutive observations from a data frame. Stretch goal: provide an example of how to extract all observations from a series of consecutive columns. 
