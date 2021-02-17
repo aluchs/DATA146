@@ -222,4 +222,22 @@ The apply() function in pandas allows you to apply a function to every value of 
 ## Question 10
 ##### Also describe an alternative approach to filtering the number of columns in a data frame. Instead of using .iloc, what other approach might be used to select, filter and assign a subset number of variables to a new data frame?
 
-An alternative but perhaps slower way of filtering then number of columns in a dataframe is to pull out each column individually and assemble them into a new data frame. 
+An alternative but perhaps slower way of filtering then number of columns in a dataframe is to pull out each column individually and assemble them into a new data frame. This can be done in only a few lines of code, relatively simply. First, we use simple subsets to pull out the data we want. In this case, we are pulling the year and continent columns from the gapminder.tsv dataset and assigning them both to their own objects. To combine them, we can use the pandas function .concat and define the axis as 1 so that the objects we made are combined horizontally. The below code showcases all of those things, and includes the output of a .head() function to show how we have combined the two columns we subset into a new data frame.
+
+```
+yeardata = data['year']
+Continentdata = data['continent']
+
+subsetdata = pd.concat([Continentdata, yeardata], axis=1)
+subsetdata.head()
+
+>>>subsetdata.head()
+  continent  year
+0      Asia  1952
+1      Asia  1957
+2      Asia  1962
+3      Asia  1967
+4      Asia  1972
+```
+
+Overall, this project was a great way to start getting back into python. If any more code/output/general information is needed, please feel free to let me know and I would be happy to supply it. Thank you!
