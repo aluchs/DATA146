@@ -1,6 +1,6 @@
 # Project 1
 
-This project involves 10 questions on the basics of python, dataset manipulation, and pandas. 
+This project involves 10 questions on the basics of python, dataset manipulation, and pandas. Each question has some code and output where I felt it was necessary, though if more is needed I have everything saved and would be happy to supply it. 
 
 ## Question 1
 ##### Describe what is a package? Also, describe what is a library? What are the two steps you need to execute in order to install a package and then make that library of functions accessible to your workspace and current python work session? Provide examples of how you would execute these two steps using two of the packages we have used in class thus far. Be sure to include an alias in at least one of your two examples and explain why it is a good idea to do so.
