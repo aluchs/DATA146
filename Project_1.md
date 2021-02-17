@@ -147,7 +147,7 @@ else:
 a = 5
 b = 4
 
-if a & b == 4: #This line showcases the use of '=='
+if a and b == 4: #This line showcases the use of '=='
     print("Both are 4")
 else:
     print("Not all are 4")
