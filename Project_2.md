@@ -64,6 +64,7 @@ plt.legend(loc = "upper left")
 plt.show()
 ```
 Running the above code will give us the following plot as its output.
+
 ![image](https://user-images.githubusercontent.com/78165529/109752061-b3bd0500-7bad-11eb-803e-f87976737ff1.png)
 
 This looks pretty good! But maybe we can make it better. What if we try applying a logarithm to the data? This can be done with the following code, only slightly altered from the code to make the plot above.
@@ -111,5 +112,6 @@ plt.show()
 ```
 
 This code outputs the plot below. While the plot uses a logarithm on the y axis now (which may be conusing to some readers), the trend in the data is more more clearly shown than it was in the previous plot. The extreme outliers have come closer to the main bodies of the box and whisker plots, and it is not much easier to tell that population sizes have been on an upward trend from 1952 - 2007. Because we can much more easily see the trend in the data, this plot clearly communicates the change in population sizes best.
+
 ![image](https://user-images.githubusercontent.com/78165529/109754814-b8d08300-7bb2-11eb-9136-fd58134375c3.png)
 
