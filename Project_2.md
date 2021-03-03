@@ -21,14 +21,44 @@ y = Political Leaning
 
 z = Urban Area
 
-a = Liklihood of Enjoying Going to Movie Theaters (this is our target)
+a = Likelihood of Enjoying Going to Movie Theaters (this is our target)
 
-For simplicity's sake, lets say that we have found multiple studies that indicate that height, political leaning, and urban area each have an equal effect on the liklihood of someone liking visits to the movie theater. If we know each variable has a direct positive relationship with liklihood of enjoying going to movie theaters, we can then make our model the following: a = x + y + z. But how do we plug our nominal and ordinal data in to get a numeric prediction for how likely movie theater enjoyment is for our respondents? By assigning numeric values to the named variables. For political leaning, we can assign each value 1-5 in order from most to least conservative. For the urban area, we can do the same in assigning 1 to towns, 2 to suburbs, and 3 for cities. By assigning each name to numbers, we can plug in each value to get a return value for our target. This is a relatively simplistic model, but in my mind gets across the point of how features interact to predict the target. The variables may be nonsensical, but they can be replaced with other variable names for the same effect.
+For simplicity's sake, lets say that we have found multiple studies that indicate that height, political leaning, and urban area each have an equal effect on the likelihood of someone liking visits to the movie theater. If we know each variable has a direct positive relationship with likelihood of enjoying going to movie theaters, we can then make our model the following: a = x + y + z. But how do we plug our nominal and ordinal data in to get a numeric prediction for how likely movie theater enjoyment is for our respondents? By assigning numeric values to the named variables. For political leaning, we can assign each value 1-5 in order from most to least conservative. For the urban area, we can do the same in assigning 1 to towns, 2 to suburbs, and 3 for cities. By assigning each name to numbers, we can plug in each value to get a return value for our target. This is a relatively simplistic model, but in my mind gets across the point of how features interact to predict the target. The variables may be nonsensical, but they can be replaced with other variable names for the same effect.
 
 
 ## Question 2
 ##### Comment out the seed from your randomly generated data set of 1000 observations and use the beta distribution to produce a plot that has a mean that approximates the 50th percentile. Also produce both a right skewed and left skewed plot by modifying the alpha and beta parameters from the distribution. Be sure to modify the widths of your columns in order to improve legibility of the bins (intervals). Include the mean and median for all three plots.
 
+A beta distribution is a distribution that shows the spread of probabilities of some event occurring. It can be used to model the random behavior of percentages and proportions, and it's shape can be changed via the variables alpha and beta (α and β). In python, we can use numpy's np.random.beta() function to simply show beta distributions. First, we will produce a beta distribution whose plot approximates the 50th percentile. This can be done with the following code.
+
+```
+a = 3
+b = 3
+n= 1000
+x1 = np.random.beta(a, b, size=n)
+
+np.mean(x1)
+
+np.median(x1)
+
+
+plt.figure(figsize=(8, 8))
+#Make the histogram
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.hist(x1)
+plt.show()
+```
+
+Part of the code is getting the mean and median of our distribution. With the parameters we used, the mean is 0.498559346499271, which is exceptionally close to .5. The median is 0.4990222264976951, also very close to .5. But what does the distribution actually look like? The code will ouput the plot below, which we can see looks relatively normal and therefore approximates the 50th percentile.
+![image](https://user-images.githubusercontent.com/78165529/109847307-0aadf300-7c1d-11eb-8c8d-5a1eddbee102.png)
+
+Next, we will create a plot of a beta distribution that is skewed right. This can be done using the same code as used above, but changing α to be .5. This one change makes the mean of our distribution become 0.14153438349720654 and the median become 0.07824314874590058. When we look at the plot of the new distribution, we can clearly see that it is skewed right.
+![image](https://user-images.githubusercontent.com/78165529/109847640-6ed0b700-7c1d-11eb-90c8-d004eb773199.png)
+
+Finally, we will create a plot of a beta distribution that is skewed left. Similarly to the last plot, we can change just one variable and completely alter the distribution. In this case, α is restored to its old value of 3, but β is now .5. This change makes the new mean of our distribution 0.8540950693468715, and the new median 0.9164754634219772. The plot of this third distribution is below.
+
+![image](https://user-images.githubusercontent.com/78165529/109847974-c53df580-7c1d-11eb-9aab-10c254e9d4b3.png)
 
 
 ## Question 3
@@ -116,4 +146,3 @@ plt.show()
 This code outputs the plot below. While the plot uses a logarithm on the y axis now (which may be conusing to some readers), the trend in the data is more more clearly shown than it was in the previous plot. The extreme outliers have come closer to the main bodies of the box and whisker plots, and it is not much easier to tell that population sizes have been on an upward trend from 1952 - 2007. Because we can much more easily see the trend in the data, this plot clearly communicates the change in population sizes best.
 
 ![image](https://user-images.githubusercontent.com/78165529/109754814-b8d08300-7bb2-11eb-9136-fd58134375c3.png)
-
