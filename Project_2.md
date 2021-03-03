@@ -13,7 +13,7 @@ Ordinal data is both named and ordered. An example of ordinal data would be a po
 
 Nominal data is named, but not ordered. An example of nominal data would be a survey question asking what type of urban area respondents live in, with set responses like "suburbs", "cities", and "towns". The possible responses each have names, but their order can be mixed up without affecting the question at all. 
 
-We can use the above examples to create an example model that includes variables from each type of data. Lets say we believe that height, political leaning, and the urban area that people live in can predict how much people like going to movie theaters (our target). We can start creating our model by assigning each of our variables, or features, a variable name. We will use the following classifications:
+We can use the above examples to create an example model that includes variables from each type of data. Lets say we believe that height, political leaning, and the urban area that people live (our features) in can predict how much people like going to movie theaters (our target). We can start creating our model by assigning each of our variables, or features, a variable name. We will use the following classifications:
 
 x = Height
 
@@ -51,9 +51,11 @@ plt.show()
 ```
 
 Part of the code is getting the mean and median of our distribution. With the parameters we used, the mean is 0.498559346499271, which is exceptionally close to .5. The median is 0.4990222264976951, also very close to .5. But what does the distribution actually look like? The code will ouput the plot below, which we can see looks relatively normal and therefore approximates the 50th percentile.
+
 ![image](https://user-images.githubusercontent.com/78165529/109847307-0aadf300-7c1d-11eb-8c8d-5a1eddbee102.png)
 
 Next, we will create a plot of a beta distribution that is skewed right. This can be done using the same code as used above, but changing α to be .5. This one change makes the mean of our distribution become 0.14153438349720654 and the median become 0.07824314874590058. When we look at the plot of the new distribution, we can clearly see that it is skewed right.
+
 ![image](https://user-images.githubusercontent.com/78165529/109847640-6ed0b700-7c1d-11eb-90c8-d004eb773199.png)
 
 Finally, we will create a plot of a beta distribution that is skewed left. Similarly to the last plot, we can change just one variable and completely alter the distribution. In this case, α is restored to its old value of 3, but β is now .5. This change makes the new mean of our distribution 0.8540950693468715, and the new median 0.9164754634219772. The plot of this third distribution is below.
@@ -84,7 +86,7 @@ df_2007 = df[idx_2007]
 Now that we have the data we need, we can create the plots comparing the change in life expectancies amongs all countries in the data set from 1952 to 2007. The below code will create our plot, name its axes, and create a legend in the corner so we know which histogram color is showing which year.
 
 ```
-# Make the plot!
+# Creating the plot
 plt.figure(figsize=(6, 6))
 plt.hist(df_1952['lifeExp'], rwidth=0.9, label=1952, alpha=0.5)
 plt.hist(df_2007['lifeExp'], rwidth=0.9, label=2007, alpha=0.5)
