@@ -80,6 +80,7 @@ plt.show()
 ```
 
 Running this code gives this output instead:
+
 ![image](https://user-images.githubusercontent.com/78165529/109752230-01d20880-7bae-11eb-8260-3b878be9c163.png)
 
 While interesting, I believe that the first plot (without the logarithm) is a better representation of the data. You can clearly see the trend in the data towards a higher life expectancies in 2007, and that trend is shown without altering the data at all. The lack of alteration will make it easier for audiences to understand while still getting the point of the data across. It's not that the logarithm plot is bad, but we can communicate the same information with the unaltered plot with more simplicity, so it is the plot that best communicates the information.
@@ -99,6 +100,7 @@ plt.show()
 ```
 
 This code outputs the box and whisker plot below. While it includes all of the information we asked it to include, the data is very difficult to read because of the few outliers that stretch the graph upwards and shrink the boxes that we would like to see. 
+
 ![image](https://user-images.githubusercontent.com/78165529/109754648-698a5280-7bb2-11eb-9ca5-231f1dcb4bf9.png)
 
 To try to create a plot that we can discern more information from, we can apply a logarithm to the data using the following code.
