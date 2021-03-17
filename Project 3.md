@@ -235,7 +235,7 @@ Below is a table with the Charleston asking prices model outputs:
 
 Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 | 
 |:-------------:|:-------------:|:-----:|:-------------:|
-| | KFold without standardization | 9 | 0.282 | 0.214 |
+| KFold without standardization | 9 | 0.282 | 0.214 |
 | KFold with standardization | 8 | 0.281 | 0.226 | 
 | Ridge Regression without standardization | 10 | 0.261 | 0.219 |
 | Ridge Regression with standardization | 8 | 0.279 | 0.272 |
@@ -245,7 +245,7 @@ Below is a table with the Charleston actual prices model outputs:
 
 Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 | 
 |:-------------:|:-------------:|:-----:|:-------------:|
-| | KFold without standardization | 10 | 0.340 | 0.254 |
+| KFold without standardization | 10 | 0.340 | 0.254 |
 | KFold with standardization | 5 | 0.341 | 0.282 | 
 | Ridge Regression without standardization | 8 | 0.337 | 0.274 |
 | Ridge Regression with standardization | 10 | 0.336 | 0.288 |
@@ -253,4 +253,6 @@ Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 |
 The models are way better now! It looks like adding the zipcode data made a huge difference in improving the guessing power of the models in every single model we tested. While the R^2 scores are still not very high, overall adding the zipcode data was a definite net positive, perhaps because the zipcodes allowed for some level of categorization based on neighborhoods. Zipcodes often have similar levels of income and therefore housing prices, so it is not really surprising that the added data was a huge help to our models.
 
 ## Question 6
-##### 
+##### Finally, consider the model that produced the best results. Would you estimate this model as being overfit or underfit? If you were working for Zillow as their chief data scientist, what action would you recommend in order to improve the predictive power of the model that produced your best results from the approximately 700 observations (716 asking / 660 actual)?
+
+All in all, the model that gave us the highest combined results was the KFold with standardization used on the Charleston actual prices data. The model gave values of 0.341 for training and 0.282 for testing, leading me to believe that the model is overfit. I believe this because the model performed relatively better on the training data, and this observation leads me to two recommendations. If we are using the same data, I would first recommend the use of a model that is more punishing on parameters that are overfitting the data. A lasso regression could potentially be used here, as its regularization methods are stronger than those found in the ridge regression. My second, less concrete, recommendation is to add more data points to the model. The zip code data being added increased the predictive power of the model 10 fold in both the training and testing categories. I believe that adding more points like those could help the model  be more predictive, as there is potential for the square footage, beds, and baths in a house not being very strong predictors of the house's actual or asking prices.
