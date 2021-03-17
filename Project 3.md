@@ -236,16 +236,21 @@ Below is a table with the Charleston asking prices model outputs:
 Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 | 
 |:-------------:|:-------------:|:-----:|:-------------:|
 | | KFold without standardization | 9 | 0.282 | 0.214 |
-| KFold with standardization |  |  |  |  | 
-| Ridge Regression without standardization |  |  |  |  | 
-| Ridge Regression with standardization |  |  |  |  |
+| KFold with standardization | 8 | 0.281 | 0.226 | 
+| Ridge Regression without standardization | 10 | 0.261 | 0.219 |
+| Ridge Regression with standardization | 8 | 0.279 | 0.272 |
 
 
 Below is a table with the Charleston actual prices model outputs:
 
 Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 | 
 |:-------------:|:-------------:|:-----:|:-------------:|
-| | KFold without standardization | |  | |
-| KFold with standardization |  |  |  |  | 
-| Ridge Regression without standardization |  |  |  |  | 
-| Ridge Regression with standardization |  |  |  |  |
+| | KFold without standardization | 10 | 0.340 | 0.254 |
+| KFold with standardization | 5 | 0.341 | 0.282 | 
+| Ridge Regression without standardization | 8 | 0.337 | 0.274 |
+| Ridge Regression with standardization | 10 | 0.336 | 0.288 |
+
+The models are way better now! It looks like adding the zipcode data made a huge difference in improving the guessing power of the models in every single model we tested. While the R^2 scores are still not very high, overall adding the zipcode data was a definite net positive, perhaps because the zipcodes allowed for some level of categorization based on neighborhoods. Zipcodes often have similar levels of income and therefore housing prices, so it is not really surprising that the added data was a huge help to our models.
+
+## Question 6
+##### 
