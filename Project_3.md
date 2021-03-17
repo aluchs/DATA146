@@ -233,7 +233,7 @@ y = np.array(homes.iloc[:,0])
 ```
 Below is a table with the Charleston asking prices model outputs:
 
-Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 | 
+| Analysis Type | Number of Folds | Training R^2 | Testing R^2 | 
 |:-------------:|:-------------:|:-----:|:-------------:|
 | KFold without standardization | 9 | 0.282 | 0.214 |
 | KFold with standardization | 8 | 0.281 | 0.226 | 
@@ -243,7 +243,7 @@ Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 |
 
 Below is a table with the Charleston actual prices model outputs:
 
-Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 | 
+| Analysis Type | Number of Folds | Training R^2 | Testing R^2 | 
 |:-------------:|:-------------:|:-----:|:-------------:|
 | KFold without standardization | 10 | 0.340 | 0.254 |
 | KFold with standardization | 5 | 0.341 | 0.282 | 
