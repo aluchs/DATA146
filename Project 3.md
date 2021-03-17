@@ -181,3 +181,47 @@ Training score for this value: 0.020
 Testing score for this value: 0.016
 ```
 
+Standardizing the data seemed to help in this case! The scores still aren't great, but they are our best yet in both training and testing scores. The standardization seemed to again help the testing scores for the most part.
+
+## Question 4
+##### Next, go back, train and test each of the three previous model types/specifications, but this time use the dataset charleston_act.csv (actual sale prices). How did each of these three models perform after using the dataset that replaced asking price with the actual sale price? What were the training and testing scores you produced? Interpret and assess your output.
+
+Now we get to use a new set of data! This dataset has similar features as the original dataset, but the prices now are the prices houses actually sold for instead of the prices that sellers are asking for. I believe the data may fit into a linear model better in this case, as in buying a house there is often some level of negotiation that could bring prices closer to a realistic proportion to the houses' amenities. We will be using the exact same code and situations as before, but now with our new dataset. Below I include the code to input this new dataset (and the optimal number of folds used), as well as the outputs of each of our code blocks above. I do not include the code again as it is very similar or exactly the same as the code used before.
+
+Inputting the new dataset and seeing its shape:
+```
+homes = pd.read_csv('C:/Users/Andrew/Desktop/COLLEGE STUFF/Spring 2021/Intro Data Science/charleston_act.csv')
+homes.shape
+```
+The shape is (660,28), slightly smaller than our last dataset by about 50 houses. 
+
+KFold without standardization (8 folds):
+```
+Training: 0.004
+Testing: -0.010
+```
+
+KFold with standardization (7 folds):
+```
+Training after standardization: 0.004
+Testing after standardization: -0.012
+```
+
+Ridge Regression without standardization (5 folds):
+```
+Training score for this value: 0.004
+Testing score for this value: -0.003
+```
+
+Ridge Regression with standardization (6 folds):
+```
+Training score for this value: 0.004
+Testing score for this value: -0.002
+```
+
+Interestingly enough, each of the models using the actual price of the houses in question performed worse than they did with the asking prices of each of the houses. Of the models with the new data, the ridge regression with standardization performed the best, but the values are astonishingly low. Compared to the models in the last dataset, the outlook is even worse as the earlier models consistently scored 4 times higher than the new ones. This could be explained by the actual price having an opposite effect than I predicted. The data could be harder to model because the asking prices are set under the influence of appraisors (potentially a more structured way of pricing), whereas the actual prices are skewed by people's personal preferences.
+
+
+## Question 5
+##### Go back and also add the variables that indicate the zip code where each individual home is located within Charleston County, South Carolina. Train and test each of the three previous model types/specifications. What was the predictive power of each model? Interpret and assess your output.
+
