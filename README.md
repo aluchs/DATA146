@@ -19,3 +19,9 @@ Completed 3/2/21
 Plots! Logarithms! Packages! All of the above are included in this 4 question project on how to communicate trends in data as best as possible.
 
 [Project 2](Project_2.md)
+
+### Project 3
+Completed 3/16/21 
+This project involves 4 questions on linear regression and ridge regression combined with more basic python techniques of slicing, loops, and creating functions.
+
+[Project 3](Project_3.md)
