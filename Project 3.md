@@ -225,3 +225,27 @@ Interestingly enough, each of the models using the actual price of the houses in
 ## Question 5
 ##### Go back and also add the variables that indicate the zip code where each individual home is located within Charleston County, South Carolina. Train and test each of the three previous model types/specifications. What was the predictive power of each model? Interpret and assess your output.
 
+To include the zip code variables, we can simply run the same code that we did earlier after re-subsetting our dataset to include the zip code variables. The zip code variables are coded with the column names being the zip code, a 1 being given if the house is in that zip code, and a 0 if the house is not in that zip code. Below is code from earlier now modified to include the 28 columns in our dataset. The code comes directly after reading in the dataset to our IDE.
+
+```
+X = np.array(homes.iloc[:,1:28])
+y = np.array(homes.iloc[:,0])
+```
+Below is a table with the Charleston asking prices model outputs:
+
+Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 | 
+|:-------------:|:-------------:|:-----:|:-------------:|
+| | KFold without standardization | 9 | 0.282 | 0.214 |
+| KFold with standardization |  |  |  |  | 
+| Ridge Regression without standardization |  |  |  |  | 
+| Ridge Regression with standardization |  |  |  |  |
+
+
+Below is a table with the Charleston actual prices model outputs:
+
+Analysis Type      |    Number of Folds     | Training R^2  | Testing R^2 | 
+|:-------------:|:-------------:|:-----:|:-------------:|
+| | KFold without standardization | |  | |
+| KFold with standardization |  |  |  |  | 
+| Ridge Regression without standardization |  |  |  |  | 
+| Ridge Regression with standardization |  |  |  |  |
