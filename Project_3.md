@@ -231,6 +231,7 @@ To include the zip code variables, we can simply run the same code that we did e
 X = np.array(homes.iloc[:,1:28])
 y = np.array(homes.iloc[:,0])
 ```
+
 Below is a table with the Charleston asking prices model outputs:
 
 | Analysis Type | Number of Folds | Training R^2 | Testing R^2 | 
@@ -239,6 +240,7 @@ Below is a table with the Charleston asking prices model outputs:
 | KFold with standardization | 8 | 0.281 | 0.226 | 
 | Ridge Regression without standardization | 10 | 0.261 | 0.219 |
 | Ridge Regression with standardization | 8 | 0.279 | 0.272 |
+
 
 
 Below is a table with the Charleston actual prices model outputs:
