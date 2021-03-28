@@ -2,6 +2,8 @@
 
 ## After a tough midterm, I was knocked down but not out. Below are my second attempts at the midterm questions, and what I did wrong on my first go-through.
 
+Before we jump in to my corrections, I wanted to say that the review sessions and code we were provided to help with the corrections really got me to understand the concepts covered here. I've found that I learn code best when looking at annotated code examples, but of course that is hard to give with a midterm so I found what we were given similarly helpful.
+
 ## Question 15
 ##### Which of the below features is most strongly correlated with the target?
 
@@ -116,3 +118,33 @@ The first line prints out the variables name that we are looking at to check tha
 ## Question 23
 ##### If we had looked at MSE instead of R2 when doing our Ridge regression (question 19), would we have determined the same optimal value for alpha, or something different?
 
+This question uses the MSE output of our DoKFold function to find optimal alpha values if we had used MSE instead of R^2. This was again a case of a wrong answer because I did not entirely understand what was going in to finding optimal alpha values. To find the answer to this question we can use the values we got from running the Ridge regression earlier in the midterm. The below code snippet gives us the answer to this question:
+
+```
+idx = np.argmin(rid_te_mse)
+print(rid_a_range[idx], rid_tr[idx], rid_te[idx], rid_tr_mse[idx], rid_te_mse[idx])
+
+plt.plot(rid_a_range, rid_te_mse,'or')
+plt.xlabel('$\\alpha$')
+plt.ylabel('Avg MSE')
+plt.show()
+```
+
+This code plots the MSE values with their corresponding alpha values from earlier in the midterm. For each potential alpha value, we had the computer calculate the outputted MSE, which can then be plotted in order to find the best possible MSE. In this case we found the best possible MSE to be 26.1, which is different than the value we found earlier of 25.8. While a small difference, the output shows we can have different optimal alpha values when using different measures of fit. 
+
+## Question 23
+##### 	If we had looked at MSE instead of R2 when doing our Lasso regression (question 20), what would we have determined the optimal value for alpha to be?
+
+This question is very similar to the last one, meaning that I got it wrong for the same reason and the code is very similar to the last question. The code snippet to get the correct answer looks like this:
+
+```
+idx = np.argmin(las_te_mse)
+print(las_a_range[idx]), las_tr[idx], las_te[idx], las_tr_mse[idx], las_te_mse[idx])
+
+plt.plot(las_a_range, las_te_mse,'or')
+plt.xlabel('$\\alpha$')
+plt.ylabel('Avg MSE')
+plt.show()
+```
+
+This code does the same as the last question's code, just adapated for the lasso regression but ultimately ending with a similar graph. Once we have the graph, we can see that the optimal alpha value for the Lasso regression if we had used MSE is 0.00186. This is not different than the optimal alpha value we got using R^2, showing that using MSE as opposed to R^2 does not necessarily mean there will be a difference in alpha values.
