@@ -1,4 +1,4 @@
-# Midterm
+# Midterm Corrections
 
 ## After a tough midterm, I was knocked down but not out. Below are my second attempts at the midterm questions, and what I did wrong on my first go-through.
 
@@ -89,3 +89,27 @@ Same problem, similar code, similar solution. The problems that I had on the las
 ##### Let's look at some of what these models are estimating. 
 ##### Refit a linear, Ridge, and Lasso regression to the entire (standardized) dataset.  No need to do any train/test splits or K-fold validation here. Use the optimal alpha values you found previously.
 ##### Which of these models estimates the smallest coefficient for the variable that is least correlated (in terms of absolute value of the correlation coefficient) with the target?
+
+This problem was difficult because of my lack of understanding the previous two questions. Without the proper alpha values, it is not possible to get the correct answer for this question because running the regressions properly requires those alpha values. Besides that issue, my original code seemed relatively correct so I understood the question itself, just not the entire implementation of it. The code snippet that most efficiently solves this problem is as follows:
+
+```
+print(X_names[5])
+lin = LR(); rid=Ridge(alpha=25.8); las = Lasso(alpha=0.00186)
+lin.fit(Xs,y); rid.fit(Xs,y); las.fit(Xs,y);
+lin.coef_[5], rid.coef_[5], las.coef_[5]
+```
+
+The above snippet firstly prints the column that we will be looking at for this question. It prints 'AveOccup', so now we have a better idea of what exactly we are looking at. The next line defines the settings we will use for the regressions by putting in the alpha values for the question. The third line fits each of the models, and the final line prints out the correlations for each of those models so that we can see which estimates the smallest coefficient for the variable that is least correlated with the target in terms of the absolute value of the correlation coefficient. The final line prints out (-0.03932626697814873, -0.039412573728940394, -0.03761823364553456), which tells us that the Lasso regression gives the smallest correlation coefficient for the variable. 
+
+## Question 22
+##### Which of the above models estimates the smallest coefficient for the variable that is most correlated (in terms of the absolute value of the correlation coefficient) with the target?
+
+This question requires similar code to the last one, this time customized to slice out the variable that was most correlated with the target. Because we already input the settings for each of our regressions, the code for this problem takes only two lines:
+
+```
+print(X_names[0])
+lin.coef_[0], rid.coef_[0], las.coef_[0]
+```
+
+The first line prints out the variables name that we are looking at to check that we have the right subset. It prints out 'MedInc' (the median income), so we have the correct index. The next line simply uses the lin, rid, and las settings we used in our last question to find the coefficients for this variable. The second line outputs (0.8296193042804514, 0.8288892465528185, 0.8200140807502059), which tells us that the Lasso regression estimates the smallest coefficient for MedInc, the variable most correlated with the target.
+
