@@ -113,3 +113,6 @@ lin.coef_[0], rid.coef_[0], las.coef_[0]
 
 The first line prints out the variables name that we are looking at to check that we have the right subset. It prints out 'MedInc' (the median income), so we have the correct index. The next line simply uses the lin, rid, and las settings we used in our last question to find the coefficients for this variable. The second line outputs (0.8296193042804514, 0.8288892465528185, 0.8200140807502059), which tells us that the Lasso regression estimates the smallest coefficient for MedInc, the variable most correlated with the target.
 
+## Question 23
+##### If we had looked at MSE instead of R2 when doing our Ridge regression (question 19), would we have determined the same optimal value for alpha, or something different?
+
