@@ -25,3 +25,8 @@ Completed 3/16/21
 This project involves 4 questions on linear regression and ridge regression combined with more basic python techniques of slicing, loops, and creating functions.
 
 [Project 3](Project_3.md)
+
+### Midterm Corrections
+A tricky midterm, and a chance at redemption - this project has my midterm corrections, including why I got wrong what I got wrong.
+
+[Midterm Corrections](Midterm_Corrections.md)
