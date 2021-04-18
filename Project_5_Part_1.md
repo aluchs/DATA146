@@ -3,13 +3,13 @@
 ## In this episode of DATA146, we take on linear, ridge, and lasso regression, all with minimal assistance. Truly a challenge for the ages, so lets get right into it!
 
 
-## Download the anonymized dataset describing persons.csv from a West African county and import it into your PyCharm project workspace (right click and download from the above link or you can also find the data pinned to the slack channel). First set the variable wealthC as your target. It is not necessary to set a seed.
+### Download the anonymized dataset describing persons.csv from a West African county and import it into your PyCharm project workspace (right click and download from the above link or you can also find the data pinned to the slack channel). First set the variable wealthC as your target. It is not necessary to set a seed.
 
 Simple! We can use panda's read_csv to import our .csv file. In looking at the data, there needs to be some cleaning performed as several NaN entries exist in the dataset, which won't work well with our models. We can use dropna to remove these variables. By using .shape, we know that dropping the NaN values brought our dataset from 47,974 entries to 47,891 entries. That means we only lost about 80 rows, which in a dataset of over 47,000 is a minimal loss. Next, we must remove our target variables from the dataset so they do not influence our projections of the model's fit on the data. Specifically, we can use .drop to remove both the wealthC and wealthI variables. 
 
 
 
-## Perform a linear regression and compute the MSE. Standardize the features and again compute the MSE. Compare the coefficients from each of the two models and describe how they have changed.
+### Perform a linear regression and compute the MSE. Standardize the features and again compute the MSE. Compare the coefficients from each of the two models and describe how they have changed.
 
 For this problem we will use LinearRegression from the sklearn library. Now that our dataset is properly cleaned, we can use LinearRegression to calculate the MSE for both WealthI and WealthC as they are and after being standardized. MSE can be calculated with the below line of code once you have your actual y and predicted y from the linear regression.
 
@@ -27,7 +27,7 @@ Below is a table showing the MSEs for WealthC and WealthI, both as-is and after 
 Because MSE is relative, we are not looking to find the objectively best fitting model, but can use our results to compare betweent the models. The standardized WealthC model seemed to do the best by far, to the point where I am wondering if there is an error but could not find any. Regardless, the next best performing model was the WealthI standardized, so across the board standardization seemed to help with our performance. Not too far behind that was the WealthI un-standardized model, and way behind that was the WealthC un-standardized model. 
 
 
-## Run a ridge regression and report your best results.
+### Run a ridge regression and report your best results.
 
 First, we'll run a ridge regression with WealthC as our target variable. The first step in running a ridge regression is to find our alpha parameter. Similar to the midterm, this can be done by using our DoKFold function in a loop for all alpha values in a range. To save time, we will start with a wide range of alpha values but only test ~20 points within that wide range. By doing that, we can quickly scope in to where we believe the best alpha value is located. We'll start by running our ridge regression for 20 values between 50 and 200. The output gives us the below plot.
 
@@ -51,7 +51,7 @@ We will center our search more around that point, using values between 80 and 90
 ![image](https://user-images.githubusercontent.com/78165529/115160792-299b0400-a068-11eb-908b-0d5b8597620c.png)
 
 
-## Run a lasso regression and report your best results.
+### Run a lasso regression and report your best results.
 
 The process of running a lasso regression is very similar to that of a ridge regression. The major difference is that alpha values tend to be much lower, so in making a model for WealthC, I started my search with 20 values between .000000001 and 2. I used a very low decimal because using 0 returned errors for me, but I found that low decimals had relatively minimal differences in the R^2 values they were returning. The first plot I returned is below. It indicates that for this model, the closer to 0 the better for our R^2 value. 
 
@@ -69,7 +69,7 @@ Now tighten our search down to values between .45 and .55. The plot below shows 
 
 ![image](https://user-images.githubusercontent.com/78165529/115161791-9b298100-a06d-11eb-80a7-e0eaa476429d.png)
 
-## Comparison and Conclusion
+### Comparison and Conclusion
 
 All of these fancy plots are great, but what do they mean? Which model did best? To compare the models, we can look at their R^2 scores and find which did scored highest. In first place, we have the lasso regression performed on WealthI, with an R^2 of 0.8382. This is a very strong predictive score for our anonymous West African country, and if I had to pick a model to use out of any of these I would go with this one. In second we have the ridge regression performed on WealthI with an R^2 score of 0.8249. While not very far behind the lasso regression, the R^2 value being lower still indicates the model is not as strong. 
 
