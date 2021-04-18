@@ -17,7 +17,7 @@ For this problem we will use LinearRegression from the sklearn library. Now that
 mse = np.mean((y-y_pred)**2)
 ```
 
-Below is a table showing the MSEs for WealthC and WealthI, both as-is and after being standardized. I used StandardScaler from the sklearn library in otder to standardize the variables. 
+Below is a table showing the MSEs for WealthC and WealthI, both as-is and after being standardized. I used StandardScaler from the sklearn library in order to standardize the variables. 
 
 | MSEs  | Un-Standardized | Standardized  |
 | ------------- | ------------- | ------------- |
@@ -54,3 +54,13 @@ We will center our search more around that point, using values between 80 and 90
 
 ## Question 4
 ##### Run a lasso regression and report your best results.
+
+The process of running a lasso regression is very similar to that of a ridge regression. The major difference is that alpha values tend to be much lower, so in making a model for WealthC, I started my search with 20 values between .000000001 and 2. I used a very low decimal because using 0 returned errors for me, but I found that low decimals had relatively minimal differences in the R^2 values they were returning. The first plot I returned is below. It indicates that for this model, the closer to 0 the better for our R^2 value. 
+
+![image](https://user-images.githubusercontent.com/78165529/115161445-a67bad00-a06b-11eb-8c03-b3667427aa7a.png)
+
+The results from that plot helped me to refine my search with values close to 0, so I then tested 20 values between .000000001 and .01. The plot below shows that an alpha value of  0.008947 returns the highest R^2 value, which is 0.7561. This means that the model does a relatively good job of predicting its target (a discussion we will go a bit more in to later).
+
+![image](https://user-images.githubusercontent.com/78165529/115161394-69afb600-a06b-11eb-9e6a-37d0e541ca37.png)
+
+Now on to lasso regression for WealthI. 
