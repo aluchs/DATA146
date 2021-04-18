@@ -30,3 +30,8 @@ This project involves 4 questions on linear regression and ridge regression comb
 A tricky midterm, and a chance at redemption - this project has my midterm corrections, including why I got wrong what I got wrong.
 
 [Midterm Corrections](Midterm_Corrections.md)
+
+### Project 5, Part 1
+In this project we were set out into the wild to create models on our own with linear, ridge, and lasso regression.
+
+[Project 5 Part 1](Project_5_Part_1.md)
