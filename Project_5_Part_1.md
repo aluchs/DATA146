@@ -71,6 +71,8 @@ Now tighten our search down to values between .45 and .55. The plot below shows 
 
 ## Comparison and Conclusion
 
-But Andrew! Where are
+All of these fancy plots are great, but what do they mean? Which model did best? To compare the models, we can look at their R^2 scores and find which did scored highest. In first place, we have the lasso regression performed on WealthI, with an R^2 of 0.8382. This is a very strong predictive score for our anonymous West African country, and if I had to pick a model to use out of any of these I would go with this one. In second we have the ridge regression performed on WealthI with an R^2 score of 0.8249. While not very far behind the lasso regression, the R^2 value being lower still indicates the model is not as strong. 
+
+This leaves the ridge and lasso regressions for WealthC in 3rd and 4th. Clearly, WealthC is not as correlated with the data as WealthI, which could be important for governments, NGOs, or other organizations using this data for some sort of prediction. 
 
 
