@@ -63,4 +63,10 @@ The results from that plot helped me to refine my search with values close to 0,
 
 ![image](https://user-images.githubusercontent.com/78165529/115161394-69afb600-a06b-11eb-9e6a-37d0e541ca37.png)
 
-Now on to lasso regression for WealthI. 
+Now on to lasso regression for WealthI. We will use the same process for this target and start by running 20 values in between .000000001 and 2. Our initial plot indicates that the best alpha value to use is around 0.5, so we will tighten our search down to values between .45 and .55. The plot below shows the results for this more limited search.
+
+![image](https://user-images.githubusercontent.com/78165529/115161791-9b298100-a06d-11eb-80a7-e0eaa476429d.png)
+
+
+![image](https://user-images.githubusercontent.com/78165529/115161581-90bab780-a06c-11eb-861f-5feeceabd5db.png)
+
