@@ -41,4 +41,16 @@ We can see here that the highest peak for the R^2 values is between 70 and 80. U
 Now we can see that the strongest alpha value for this regression is about 75.5. By finding the maximum R^2 value found in our loop, the best alpha value is found to more specifically be 75.5689. By using that alpha value, we get an R^2 of 0.7354, meaning that the model actually does a relatively good job in predicting values for this dataset. 
 
 
-We can go through a similar process for the variable WealthI. 
+We can go through a similar process for the variable WealthI. We will start our search for the strongest alpha parameter between 50 and 150, using 20 different points. After running that code we get this plot, indicating that the best alpha parameter will be around 80.
+
+![image](https://user-images.githubusercontent.com/78165529/115160735-dc1e9700-a067-11eb-8a2a-798678029588.png)
+
+We will center our search more around that point, using values between 80 and 90. This outputs the below plot, indicating that the strongest alpha parameter is around 93. By finding the maximum value of R^2 in our loop, we can see more specifically that the best alpha parameter in the range is 93.42, which gives us a R^2 value of 0.8249. That R^2 value means that the ridge regression predicts our target variable of WealthI very well, and shows that the regression was stronger for WealthI than it was for WealthC.
+
+
+
+![image](https://user-images.githubusercontent.com/78165529/115160792-299b0400-a068-11eb-908b-0d5b8597620c.png)
+
+
+## Question 4
+##### Run a lasso regression and report your best results.
