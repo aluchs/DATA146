@@ -24,6 +24,8 @@ A logistic regression performed on the data compared relatively evenly with the 
 
 Out of the four options for number of estimators, 5000 returned the best results, specifically training and testing scores of 0.8004 and 0.5031, respectively. Using a loop, I found that the minumum number of samples required to split an internal node with a range of values was 15, as it gave the best results for for the classification when min_samples_split is between 15 and 30. 
 
+Below is a chart with the model results for our random forest model when the data is both scaled and unscaled.
+
 | Number of Trees     | Scaled | Un-Scaled |
 | :---: |    :----:   | :---: |
 | 100   | 0.50073     | 0.50610  |
@@ -31,3 +33,4 @@ Out of the four options for number of estimators, 5000 returned the best results
 | 1000  | 0.50317     | 0.50561     |
 | 5000  | 0.49780     | 0.50902     |
 
+As you can see, the models performed relatively similarly, with the un-scaled models doing slightly better. The difference is small, with most results only differing by a few hundredths. Overall, the 500 trees unscaled model seemed to perform the strongest, with the scaled 5000 tree model performing the worst.
