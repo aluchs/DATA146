@@ -1,8 +1,8 @@
 # Project 5 Part 2
 
-## In this project we take a look at K-nearest neighbors, logistic regression, and random forests using a dataset on a large West African city.
+## Shiny new kinds of models! In this project we take a look at K-nearest neighbors, logistic regression, and random forests using a dataset on a large West African city.
 
-As usual, our first step is to download and import our dataset, as well as create our DoKFold, GetData, and CompareClasses commands. Each of these functions have been used in class before, so it is relatively simple to bring them in to our project today. Our dataset requires a bit of preparation, namely dropping NaN values as well as changing the age and edu column types to integers. 
+As usual, our first step is to download and import our dataset, as well as create our DoKFold, GetData, and CompareClasses commands. Each of these functions have been used in class before, so it is relatively simple to bring them in to my project. Our dataset requires a bit of preparation, namely dropping NaN values as well as changing the age and edu column types to integers. 
 
 #### Execute a K-nearest neighbors classification method on the data. What model specification returned the most accurate results? Did adding a distance weight help?
 
@@ -59,9 +59,13 @@ I also found that the minimum number of samples that returned the best score was
 
 | Number of Trees     | Scaled | Un-Scaled |
 | :---: |    :----:   | :---: |
-| 100   | 0.47877     | 0.50610  |
-| 500   | 0.47535     | 0.50951     |
-| 1000  | 0.47632     | 0.50561     |
-| 5000  | 0.48072    | 0.50902     |
+| 100   | 0.47877     | 0.49682  |
+| 500   | 0.47535     | 0.50268     |
+| 1000  | 0.47632     | 0.50610     |
+| 5000  | 0.48072     | 0.50707    |
 
-Standardizing the data did the model no favors. Scores across the board were lower as a result of scaling the data, with the best result being 0.4826 as a result of using 100 estimators. Scores got as low as 0.4714 when using 1000 estimators, so the range was not incredibly large.
+Standardizing the data did the model no favors. As you can see in the table, scores across the board were lower as a result of scaling the data, with the best result being 0.48072 after using 5000 estimators. The lowest unscaled score was 0.49682 so clearly the data should be kept unscaled to make the model as strong as possible.
+
+#### Which was best?
+
+The question of the hour. We've used a bunch of models, but which is actually the best at predicting wealth based on our dataset? The answer is the unweighted k-nearest neighbors classification we performed on the dataset before wealth values 2 and 3 were combined. We recieved scores of 0.5639 on the training data and 0.54482 on the testing data, both relatively solid scores that outperformed most of the random forest models by about .05, a relatively sizeable margin. 
