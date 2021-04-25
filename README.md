@@ -35,3 +35,8 @@ A tricky midterm, and a chance at redemption - this project has my midterm corre
 In this project we were set out into the wild to create models on our own with linear, ridge, and lasso regression.
 
 [Project 5 Part 1](Project_5_Part_1.md)
+
+### Project 5, Part 2
+In this project we take a look at fancy new models, including random forests and kNN.
+
+[Project 5 Part 2](Project_5_Part_2.md)
