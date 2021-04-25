@@ -66,6 +66,8 @@ I also found that the minimum number of samples that returned the best score was
 
 Standardizing the data did the model no favors. As you can see in the table, scores across the board were lower as a result of scaling the data, with the best result being 0.48072 after using 5000 estimators. The lowest unscaled score was 0.49682 so clearly the data should be kept unscaled to make the model as strong as possible.
 
+Overall, combining wealth values of 2 and 3 did not seem to make that much of a difference in the models. Across the board, scores were relatively similar. I believe it is because the change was a minimal one - the dataset did not include that many values '2' values in the wealth column in the first place, so lumping them in with the '3's was a minimal change and did not lead to any drastic differences in the models we created.
+
 #### Which was best?
 
 The question of the hour. We've used a bunch of models, but which is actually the best at predicting wealth based on our dataset? The answer is the unweighted k-nearest neighbors classification we performed on the dataset before wealth values 2 and 3 were combined. We recieved scores of 0.5639 on the training data and 0.54482 on the testing data, both relatively solid scores that outperformed most of the random forest models by about .05, a relatively sizeable margin. 
