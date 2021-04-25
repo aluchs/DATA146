@@ -38,7 +38,7 @@ As you can see, the models performed relatively similarly, with the un-scaled mo
 
 #### Repeat the previous steps after recoding the wealth classes 2 and 3 into a single outcome. Do any of your models improve? Are you able to explain why your results have changed?
 
-##### kNN, weighted and unweighted
+##### kNN, Weighted and Unweighted
 The first step in this process was to combine the the two classes in to one. I elected to make all '2' values in the dataset '3's instead. There were few '2's in the first place and the wealth values go from 2 to 5, so I thought it would make the most sense to alter the data in that way. I then began the process of running the same models to see how combining wealth values affected the model strengths. I began with the unweighted kNN analysis. Using the below plot and a range of 30 to 200, I found that a model specification of 91 would yield the best results. The model performed relatively well, with a .5621 on the training data and a .5436 on the testing data.
 
 ![image](https://user-images.githubusercontent.com/78165529/116001623-56e53600-a5c3-11eb-9bb0-fcf71404fa22.png)
@@ -49,5 +49,19 @@ I then ran a kNN analysis that included weighting for distance. This go-around I
 
 ##### Logistic Regression
 
+The next step was to run a logistic regression. This was relatively simple to run, and I found that the regression returned training and testing scores of 0.5506 and 0.5502, respectively. 
 
+##### Random Forest Model
 
+For my random forest model, I again used the number of estimators as 100, 500, 1000 and 5000. Of the four, 5000 estimators is likely to perform the best, with a score of 0.4924 on the testing data. While stronger than the other estimator values, the difference was minimal. 100 estimators returned a score of 0.4899, so even between the biggest difference in estimator counts, the difference in scores was only about 0.002. 
+
+I also found that the minimum number of samples that returned the best score was 25. Next, I had to run the tree models to see which will actually perform the best. The below table contains my results using both scaled and unscaled data.
+
+| Number of Trees     | Scaled | Un-Scaled |
+| :---: |    :----:   | :---: |
+| 100   | 0.47877     | 0.50610  |
+| 500   | 0.47535     | 0.50951     |
+| 1000  | 0.47632     | 0.50561     |
+| 5000  | 0.48072    | 0.50902     |
+
+Standardizing the data did the model no favors. Scores across the board were lower as a result of scaling the data, with the best result being 0.4826 as a result of using 100 estimators. Scores got as low as 0.4714 when using 1000 estimators, so the range was not incredibly large.
